@@ -1,0 +1,152 @@
+<html>
+	<head>
+		<title>Guitar tabs</title>
+		
+<link rel="stylesheet" type="text/css" href="css/clojure.css">
+	</head>
+	<body style="margin:0px; background:azure;height:800px;">
+		<div id="mainHeader" style="background: none repeat scroll 0 0 #373737;height:35px;">
+			<div id="welcomeMsg" style="color:white;position: absolute;"></div>
+			
+			<a id="registerBtn" href="#" style="float:right;" class="classname">Register</a>
+			
+			<a id="logoutBtn" href="#" class="classname login-not-visible">Logout</a>
+			
+			<a id="loginBtn" href="#" class="classname login-visible">Login</a>
+		</div>
+		
+		<div id="seccondHeader" style="background: none repeat scroll 0 0 #F8F1BD;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);width: 100%;height:100px;">
+			<div id="header" style="left: 50%;margin: 0 auto;width: 80%;">
+				<img src="images/logo.png" style="height:90px;"/>
+				
+				<div class="header">
+					<ul>
+						<li><a style="background-color:#0b75b2;" href="#" >Home</a></li>
+						<li><a href="/tabs.html">Tabs</a></li>
+						<li><a href="/artists.html">Artists</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div id="content" style="padding-left:10%; padding-right:10%;padding-top:30px;height:100%;">
+			<div id="main" style="background:#0b75b2;height:100%;border-radius:10px;">
+				<div id="inside" style="opacity:0.75;background-color: #FFFFFF;background: -moz-linear-gradient(top,  #d7d6d2,  #f9ffff);background-image: linear-gradient(top,  #d7d6d2,  #f9ffff);background-image: -o-linear-gradient(top,  #d7d6d2,  #f9ffff);background-image: -moz-linear-gradient(top,  #d7d6d2,  #f9ffff);background-image: -webkit-linear-gradient(top,  #d7d6d2,  #f9ffff);background-image: -ms-linear-gradient(top,  #d7d6d2,  #f9ffff); height:104%;width:78.7%;border-radius:10px;  margin:10px; position:absolute;">
+		
+	
+					<div style="margin-left: 20px; width: 95%;">
+					
+						<div style="width:100%;margin-top:40px;float:left;">
+							<img id="img1" src="EricClapton.jpg" style="float:left" />
+							<div style="float:left; margin-left:10px; width:75%">
+								<div id="name1"></div>
+								<br/>
+								<div id="bio1"></div>
+							</div>
+						</div>
+						
+						<div style="width:100%;margin-top:40px;float:left;">
+							<img id="img2" src="EricClapton.jpg" style="float:left" />
+							<div style="float:left; margin-left:10px; width:75%">
+								<div id="name2"></div>
+								<br/>
+								<div id="bio2"></div>
+							</div>
+						</div>
+						
+						<div style="width:100%;margin-top:40px;float:left;">
+							<img id="img3" src="EricClapton.jpg" style="float:left" />
+							<div style="float:left; margin-left:10px; width:75%">
+								<div id="name3"></div>
+								<br/>
+								<div id="bio3"></div>
+							</div>
+						</div>
+					
+					
+					</div>
+		
+				
+				</div>
+			</div>
+		</div>
+		
+		<div id="footer">
+		</div>
+		
+		<div id="login" style="display:none;position: absolute;right: 0;top: 35px;" >
+		
+			<form method="post" action="/" class="form-container">
+				<div class="form-title"><h2>Sign in</h2></div>
+				<div class="form-title">Username</div>
+				<input class="form-field" type="text" name="username" /><br />
+				<div class="form-title">Password</div>
+				<input class="form-field" type="password" name="password" /><br />
+				<div class="submit-container">
+				<input class="submit-button" type="submit" value="Submit" />
+				</div>
+			</form>
+		
+		</div>
+		
+		<div id="register" style="display:none;position: absolute;right: 0;top: 35px;" >
+		
+			<form method="post" action="/register" class="form-container">
+				<div class="form-title"><h2>Register</h2></div>
+				<div class="form-title">First name</div>
+				<input class="form-field" type="text" name="firstname" /><br />
+				<div class="form-title">Last name</div>
+				<input class="form-field" type="text" name="lastname" /><br />
+				<div class="form-title">Username</div>
+				<input class="form-field" type="text" name="username" /><br />
+				<div class="form-title">Email</div>
+				<input class="form-field" type="email" name="email" /><br />
+				<div class="form-title">Password</div>
+				<input class="form-field" type="password" name="password" /><br />
+				<div class="submit-container">
+				<input class="submit-button" type="submit" value="Submit" />
+				</div>
+			</form>
+		
+		</div>
+		
+		<form id="logout" method="post" action="/logout" style="display:none">
+			<input type="submit">
+		</form>
+		
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js" > </script> 
+		<script type="text/javascript">
+		
+				$("#logoutBtn").click(function(){
+					$("#logout").submit();
+				});
+						
+				$("#loginBtn").click(function(){
+					var visible = $("#login").css("display");
+					
+					if(visible == "none"){
+						$("#login").css("display", "block");
+						$("#register").css("display", "none");
+					}
+					else{				
+						$("#login").css("display", "none");
+						$("#register").css("display", "none");
+					}
+				});
+				
+				$("#registerBtn").click(function(){
+					var visible = $("#register").css("display");
+					
+					if(visible == "none"){
+						$("#register").css("display", "block");
+						$("#login").css("display", "none");
+					}
+					else{				
+						$("#register").css("display", "none");
+						$("#login").css("display", "none");
+					}
+				});
+				
+		</script>
+	</body>
+<html>
